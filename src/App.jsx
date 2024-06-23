@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components';
 import { Form, Button,} from 'react-bootstrap';
+import "./App.css";
 
 
 
@@ -8,6 +9,9 @@ const Label = styled(Form.Label)`
   font-weight: bold;
   
 `;
+const ListItem = styled.li`
+  cursor:pointer;
+`
 
 
 
@@ -32,7 +36,7 @@ function App() {
       <Form>
    
         <Form.Group controlId="formTarget">
-          <Label>Hedef</Label>
+          <Label>TodoList</Label>
        
           <Form.Control 
             type="text" 
@@ -42,7 +46,7 @@ function App() {
           />
         </Form.Group>
   
-        <Button variant="primary" onClick={addTodo} className='mt-4'>
+        <Button variant="primary" onClick={addTodo} className="mt-4">
           Ekle
         </Button>
       </Form>
@@ -51,9 +55,9 @@ function App() {
          
         {todos.map((todo, index) => (
        
-          <li key={index}>
+          <ListItem key={index}>
             {todo}
-          </li>
+          </ListItem>
         ))}
       </ul>
    
